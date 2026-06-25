@@ -1,0 +1,17 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/jobdesk",
+      "destination": "/jobdesk.html"
+    },
+    {
+      "source": "/jobdesk/",
+      "destination": "/jobdesk.html"
+    }
+  ]
+}

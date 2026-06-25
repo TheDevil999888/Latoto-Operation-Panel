@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Latoto Schedule</title>
+  <link rel="stylesheet" href="css/background.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="dashboard">
+  <div class="page-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Latoto Operation Panel</p>
+        <h1>Dashboard Shift CS dan Kapten-Kasir</h1>
+        <p class="subtitle">Monitoring schedule harian, status off day, dan sinkronisasi data real-time.</p>
+      </div>
+      <div class="topbar-logo" aria-label="Logo LATOTO">
+        <span class="logo-border-layer" aria-hidden="true">
+          <svg class="logo-border-svg" viewBox="0 0 1000 220" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="logo-border-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#ffd65e" stop-opacity="0.08" />
+                <stop offset="20%" stop-color="#ffd65e" />
+                <stop offset="50%" stop-color="#ffffff" />
+                <stop offset="78%" stop-color="#ffd65e" />
+                <stop offset="100%" stop-color="#5d88ff" stop-opacity="0.18" />
+              </linearGradient>
+              <radialGradient id="logo-spark-gradient" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#ffffff" />
+                <stop offset="35%" stop-color="#ffd65e" />
+                <stop offset="75%" stop-color="#ffd65e" stop-opacity="0.18" />
+                <stop offset="100%" stop-color="#ffd65e" stop-opacity="0" />
+              </radialGradient>
+            </defs>
+            <rect class="logo-border-base" x="8" y="8" width="984" height="204" rx="24" ry="24"></rect>
+            <path class="logo-trace trace-top-left" pathLength="100" d="M500 8 H32 A24 24 0 0 0 8 32 V188 A24 24 0 0 0 32 212 H500"></path>
+            <path class="logo-trace trace-top-right" pathLength="100" d="M500 8 H968 A24 24 0 0 1 992 32 V188 A24 24 0 0 1 968 212 H500"></path>
+            <path class="logo-trace trace-bottom-left" pathLength="100" d="M500 212 H32 A24 24 0 0 1 8 188 V32 A24 24 0 0 1 32 8 H500"></path>
+            <path class="logo-trace trace-bottom-right" pathLength="100" d="M500 212 H968 A24 24 0 0 0 992 188 V32 A24 24 0 0 0 968 8 H500"></path>
+            <circle class="logo-spark spark-top-center" cx="500" cy="8" r="7"></circle>
+            <circle class="logo-spark spark-bottom-center" cx="500" cy="212" r="7"></circle>
+            <circle class="logo-spark spark-top-left" cx="8" cy="8" r="7"></circle>
+            <circle class="logo-spark spark-top-right" cx="992" cy="8" r="7"></circle>
+            <circle class="logo-spark spark-bottom-left" cx="8" cy="212" r="7"></circle>
+            <circle class="logo-spark spark-bottom-right" cx="992" cy="212" r="7"></circle>
+          </svg>
+        </span>
+        <img src="assets/logo LATOTO.png" alt="LATOTO">
+      </div>
+      <nav class="nav-links">
+        <a class="nav-link active" href="index.html">Dashboard Utama</a>
+        <a class="nav-link" href="jobdesk.html">Dashboard Jobdesk</a>
+      </nav>
+    </header>
+
+    <main class="content-grid">
+      <section class="hero-card">
+        <div>
+          <p class="hero-label">Kontrol Shift</p>
+          <h2 id="hero-title">Memuat data schedule...</h2>
+          <p id="hero-summary" class="hero-summary">Menyiapkan statistik off day dan roster tim.</p>
+        </div>
+        <div class="hero-badges">
+          <span class="badge">Maksimal OFF DAY 2x / bulan</span>
+          <span class="badge badge-outline">Siap sinkron Firebase</span>
+        </div>
+      </section>
+
+      <section class="stats-grid" id="stats-grid">
+      </section>
+
+      <section class="panel dashboard-wide-panel">
+        <div class="panel-head">
+          <div>
+            <p class="section-label">Dashboard Utama</p>
+            <h2>Shift CS</h2>
+          </div>
+          <div class="panel-realtime" id="cs-realtime">Memuat waktu...</div>
+          <span class="chip">Prioritas layanan</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Nama</th>
+                <th>Role</th>
+                <th>Shift</th>
+                <th>Jam Kerja</th>
+                <th>Status</th>
+                <th>Kehadiran</th>
+              </tr>
+            </thead>
+            <tbody id="cs-table-body"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel dashboard-wide-panel">
+        <div class="panel-head">
+          <div>
+            <p class="section-label">Dashboard Utama</p>
+            <h2>Shift Kapten-Kasir</h2>
+          </div>
+          <div class="panel-realtime" id="kk-realtime">Memuat waktu...</div>
+          <span class="chip chip-accent">Operasional kasir</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Nama</th>
+                <th>Role</th>
+                <th>Shift</th>
+                <th>Jam Kerja</th>
+                <th>Status</th>
+                <th>Kehadiran</th>
+              </tr>
+            </thead>
+            <tbody id="kk-table-body"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel monitoring-wide-panel">
+        <div class="panel-head">
+          <div>
+            <p class="section-label">Pengawasan</p>
+            <h2>Monitoring OFF DAY</h2>
+          </div>
+          <div class="panel-head-actions">
+            <button class="btn-secondary monitoring-history-button" id="open-history-modal" type="button">History</button>
+            <span class="chip">Max 2x per orang</span>
+          </div>
+        </div>
+        <div class="warning-list" id="warning-list"></div>
+      </section>
+    </main>
+  </div>
+
+  <div class="modal-overlay" id="history-modal" aria-hidden="true">
+    <div class="modal-card history-modal-card">
+      <div class="modal-head history-modal-head">
+        <div>
+          <p class="section-label">History OFF-DAY</p>
+          <h2>Cek History 1-6 Bulan</h2>
+          <p class="muted">Pilih bulan untuk melihat riwayat OFF DAY staff secara detail.</p>
+        </div>
+        <button class="btn-secondary" id="close-history-modal" type="button">Tutup</button>
+      </div>
+      <div class="history-toolbar">
+        <label>
+          Pilih Bulan History
+          <select id="history-month-select">
+          </select>
+        </label>
+      </div>
+      <div class="history-modal-body" id="history-modal-body"></div>
+    </div>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+  <script src="js/firebase-config.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

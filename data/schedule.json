@@ -1,0 +1,164 @@
+{
+  "appName": "Dashboard Latoto Schedule dan Jobdesk",
+  "generatedAt": "2026-06-24",
+  "baseTemplateVersion": "manual-empty-v1",
+  "maxOffdayPerMonth": 2,
+  "staff": [],
+  "jobdeskOptions": [
+    "Jobdesk DEPO BCA",
+    "Jobdesk DEPO MANDIRI",
+    "Jobdesk DEPO BNI",
+    "Jobdesk DEPO BRI",
+    "Jobdesk DEPO MANUAL / VALIDASI",
+    "Jobdesk DEPO E-WALLET & HUB ( DANA - GOPAY - OVO - LINKAJA )",
+    "Jobdesk TEMBAK CHIP",
+    "Jobdesk WITHDRAW ( BCA, BNI, E-wallet )",
+    "Jobdesk WITHDRAW ( BRI, SEABANK, JAGO, BSI, MAYBANK, DANAMON )"
+  ],
+  "jobdeskBoard": [
+    {
+      "id": "job-jobdesk-depo-bca-pagi",
+      "jobdesk": "Jobdesk DEPO BCA",
+      "assignedTo": "",
+      "backup": "",
+      "shift": "Pagi",
+      "notes": ""
+    },
+    {
+      "id": "job-jobdesk-depo-bca-malam",
+      "jobdesk": "Jobdesk DEPO BCA",
+      "assignedTo": "",
+      "backup": "",
+      "shift": "Malam",
+      "notes": ""
+    },
+    {
+      "id": "job-jobdesk-depo-mandiri-pagi",
+      "jobdesk": "Jobdesk DEPO MANDIRI",
+      "assignedTo": "",
+      "backup": "",
+      "shift": "Pagi",
+      "notes": ""
+    },
+    {
+      "id": "job-jobdesk-depo-mandiri-malam",
+      "jobdesk": "Jobdesk DEPO MANDIRI",
+      "assignedTo": "",
+      "backup": "",
+      "shift": "Malam",
+      "notes": ""
+    },
+    {
+      "id": "job-jobdesk-depo-bni-pagi",
+      "jobdesk": "Jobdesk DEPO BNI",
+      "assignedTo": "",
+      "backup": "",
+      "shift": "Pagi",
+      "notes": ""
+    },
+    {
+      "id": "job-jobdesk-depo-bni-malam",
+      "jobdesk": "Jobdesk DEPO BNI",
+      "assignedTo": "",
+      "backup": "",
+      "shift": "Malam",
+      "notes": ""
+    },
+    {
+      "id": "job-jobdesk-depo-bri-pagi",
+      "jobdesk": "Jobdesk DEPO BRI",
+      "assignedTo": "",
+      "backup": "",
+      "shift": "Pagi",
+      "notes": ""
+    },
+    {
+      "id": "job-jobdesk-depo-bri-malam",
+      "jobdesk": "Jobdesk DEPO BRI",
+      "assignedTo": "",
+      "backup": "",
+      "shift": "Malam",
+      "notes": ""
+    },
+    {
+      "id": "job-jobdesk-depo-manual-validasi-pagi",
+      "jobdesk": "Jobdesk DEPO MANUAL / VALIDASI",
+      "assignedTo": "",
+      "backup": "",
+      "shift": "Pagi",
+      "notes": ""
+    },
+    {
+      "id": "job-jobdesk-depo-manual-validasi-malam",
+      "jobdesk": "Jobdesk DEPO MANUAL / VALIDASI",
+      "assignedTo": "",
+      "backup": "",
+      "shift": "Malam",
+      "notes": ""
+    },
+    {
+      "id": "job-jobdesk-depo-e-wallet-hub-dana-gopay-ovo-linkaja-pagi",
+      "jobdesk": "Jobdesk DEPO E-WALLET & HUB ( DANA - GOPAY - OVO - LINKAJA )",
+      "assignedTo": "",
+      "backup": "",
+      "shift": "Pagi",
+      "notes": ""
+    },
+    {
+      "id": "job-jobdesk-depo-e-wallet-hub-dana-gopay-ovo-linkaja-malam",
+      "jobdesk": "Jobdesk DEPO E-WALLET & HUB ( DANA - GOPAY - OVO - LINKAJA )",
+      "assignedTo": "",
+      "backup": "",
+      "shift": "Malam",
+      "notes": ""
+    },
+    {
+      "id": "job-jobdesk-tembak-chip-pagi",
+      "jobdesk": "Jobdesk TEMBAK CHIP",
+      "assignedTo": "",
+      "backup": "",
+      "shift": "Pagi",
+      "notes": ""
+    },
+    {
+      "id": "job-jobdesk-tembak-chip-malam",
+      "jobdesk": "Jobdesk TEMBAK CHIP",
+      "assignedTo": "",
+      "backup": "",
+      "shift": "Malam",
+      "notes": ""
+    },
+    {
+      "id": "job-jobdesk-withdraw-bca-bni-e-wallet-pagi",
+      "jobdesk": "Jobdesk WITHDRAW ( BCA, BNI, E-wallet )",
+      "assignedTo": "",
+      "backup": "",
+      "shift": "Pagi",
+      "notes": ""
+    },
+    {
+      "id": "job-jobdesk-withdraw-bca-bni-e-wallet-malam",
+      "jobdesk": "Jobdesk WITHDRAW ( BCA, BNI, E-wallet )",
+      "assignedTo": "",
+      "backup": "",
+      "shift": "Malam",
+      "notes": ""
+    },
+    {
+      "id": "job-jobdesk-withdraw-bri-seabank-jago-bsi-maybank-danamon-pagi",
+      "jobdesk": "Jobdesk WITHDRAW ( BRI, SEABANK, JAGO, BSI, MAYBANK, DANAMON )",
+      "assignedTo": "",
+      "backup": "",
+      "shift": "Pagi",
+      "notes": ""
+    },
+    {
+      "id": "job-jobdesk-withdraw-bri-seabank-jago-bsi-maybank-danamon-malam",
+      "jobdesk": "Jobdesk WITHDRAW ( BRI, SEABANK, JAGO, BSI, MAYBANK, DANAMON )",
+      "assignedTo": "",
+      "backup": "",
+      "shift": "Malam",
+      "notes": ""
+    }
+  ]
+}

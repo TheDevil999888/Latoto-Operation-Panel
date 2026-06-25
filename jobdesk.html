@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Jobdesk Kasir</title>
+  <link rel="stylesheet" href="css/background.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="jobdesk">
+  <div class="page-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Latoto Operation Panel</p>
+        <h1>Dashboard Jobdesk Kasir</h1>
+        <p class="subtitle">Atur schedule tim kasir, pembagian jobdesk, dan sinkronisasi data real-time lintas perangkat.</p>
+      </div>
+      <div class="topbar-logo" aria-label="Logo LATOTO">
+        <span class="logo-border-layer" aria-hidden="true">
+          <svg class="logo-border-svg" viewBox="0 0 1000 220" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="logo-border-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#ffd65e" stop-opacity="0.08" />
+                <stop offset="20%" stop-color="#ffd65e" />
+                <stop offset="50%" stop-color="#ffffff" />
+                <stop offset="78%" stop-color="#ffd65e" />
+                <stop offset="100%" stop-color="#5d88ff" stop-opacity="0.18" />
+              </linearGradient>
+              <radialGradient id="logo-spark-gradient" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#ffffff" />
+                <stop offset="35%" stop-color="#ffd65e" />
+                <stop offset="75%" stop-color="#ffd65e" stop-opacity="0.18" />
+                <stop offset="100%" stop-color="#ffd65e" stop-opacity="0" />
+              </radialGradient>
+            </defs>
+            <rect class="logo-border-base" x="8" y="8" width="984" height="204" rx="24" ry="24"></rect>
+            <path class="logo-trace trace-top-left" pathLength="100" d="M500 8 H32 A24 24 0 0 0 8 32 V188 A24 24 0 0 0 32 212 H500"></path>
+            <path class="logo-trace trace-top-right" pathLength="100" d="M500 8 H968 A24 24 0 0 1 992 32 V188 A24 24 0 0 1 968 212 H500"></path>
+            <path class="logo-trace trace-bottom-left" pathLength="100" d="M500 212 H32 A24 24 0 0 1 8 188 V32 A24 24 0 0 1 32 8 H500"></path>
+            <path class="logo-trace trace-bottom-right" pathLength="100" d="M500 212 H968 A24 24 0 0 0 992 188 V32 A24 24 0 0 0 968 8 H500"></path>
+            <circle class="logo-spark spark-top-center" cx="500" cy="8" r="7"></circle>
+            <circle class="logo-spark spark-bottom-center" cx="500" cy="212" r="7"></circle>
+            <circle class="logo-spark spark-top-left" cx="8" cy="8" r="7"></circle>
+            <circle class="logo-spark spark-top-right" cx="992" cy="8" r="7"></circle>
+            <circle class="logo-spark spark-bottom-left" cx="8" cy="212" r="7"></circle>
+            <circle class="logo-spark spark-bottom-right" cx="992" cy="212" r="7"></circle>
+          </svg>
+        </span>
+        <img src="assets/logo LATOTO.png" alt="LATOTO">
+      </div>
+      <nav class="nav-links">
+        <a class="nav-link" href="index.html">Dashboard Utama</a>
+        <a class="nav-link active" href="jobdesk.html">Dashboard Jobdesk</a>
+      </nav>
+    </header>
+
+    <main class="content-grid jobdesk-layout">
+      <section class="panel">
+        <div class="panel-head">
+          <div>
+            <p class="section-label">Setting Schedule</p>
+            <h2>Atur Shift Tim</h2>
+          </div>
+          <div class="panel-actions">
+            <button type="button" id="focus-offday" class="btn-secondary">OFF-DAY</button>
+            <div class="shift-switch" id="schedule-role-switch">
+              <button type="button" class="shift-button" data-schedule-group="SHIFT CS">CS</button>
+              <button type="button" class="shift-button active" data-schedule-group="SHIFT KAPTEN-KASIR">KAPTEN - KASIR</button>
+            </div>
+            <button type="button" id="focus-staff-setting" class="btn-secondary">SETTING</button>
+            <button type="button" id="focus-add-staff" class="btn-secondary">TAMBAH STAFF</button>
+          </div>
+        </div>
+        <form id="schedule-form" class="form-grid">
+          <label>
+            Nama Staff
+            <select id="schedule-staff" class="js-custom-select" required></select>
+          </label>
+          <label>
+            Shift
+            <select id="schedule-shift" class="js-custom-select" required>
+              <option value="Pagi">Pagi</option>
+              <option value="Siang">Siang</option>
+              <option value="Malam">Malam</option>
+              <option value="Libur">Libur</option>
+            </select>
+          </label>
+          <div class="full-width time-grid">
+            <label>
+              Start Time
+              <input id="schedule-start-time" type="time" required>
+            </label>
+            <label>
+              End Time
+              <input id="schedule-end-time" type="time" required>
+            </label>
+          </div>
+          <div class="form-actions full-width">
+            <button type="submit" class="btn-primary">Simpan Schedule</button>
+            <button type="button" id="reset-storage" class="btn-secondary">Reset ke Data Awal</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <div>
+            <p class="section-label">Setting Jobdesk</p>
+            <h2>Atur Penugasan Kasir</h2>
+          </div>
+          <span class="chip chip-accent">Custom assignment</span>
+        </div>
+        <form id="jobdesk-form" class="form-grid">
+          <label class="full-width">
+            Pilih Jobdesk
+            <select id="jobdesk-id" class="js-custom-select" required></select>
+          </label>
+          <label>
+            Petugas Utama
+            <select id="jobdesk-assigned" class="js-custom-select" required></select>
+          </label>
+          <label>
+            Shift
+            <select id="jobdesk-shift" class="js-custom-select" required>
+              <option value="Pagi">Pagi</option>
+              <option value="Malam">Malam</option>
+            </select>
+          </label>
+          <div class="form-actions full-width">
+            <button type="submit" class="btn-primary">Simpan Jobdesk</button>
+            <button type="button" id="reset-jobdesk-board" class="btn-secondary">Reset Jobdesk Kasir</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <div>
+            <p class="section-label">Schedule Tim</p>
+            <h2>Roster Kapten dan Kasir</h2>
+          </div>
+          <span class="chip">Data aktif</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Nama</th>
+                <th>Role</th>
+                <th>Shift</th>
+                <th>Jam Kerja</th>
+                <th>OFFDAY Bulan Ini (Total)</th>
+              </tr>
+            </thead>
+            <tbody id="schedule-table-body"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel jobdesk-table-panel">
+        <div class="panel-head">
+          <div>
+            <p class="section-label">Table Jobdesk</p>
+            <h2>Jobdesk Kasir</h2>
+          </div>
+          <div class="shift-switch" id="jobdesk-shift-switch">
+            <button type="button" class="shift-button active" data-shift-filter="Pagi">SHIFT PAGI</button>
+            <button type="button" class="shift-button" data-shift-filter="Malam">SHIFT MALAM</button>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Nama Staff Yang Bertugas</th>
+                <th>Jobdesk</th>
+              </tr>
+            </thead>
+            <tbody id="jobdesk-table-body"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div id="add-staff-modal" class="modal-overlay" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="add-staff-title">
+      <div class="panel-head modal-head">
+        <div>
+          <p class="section-label">Tambah Staff</p>
+          <h2 id="add-staff-title">Input Staff Baru</h2>
+        </div>
+        <button type="button" id="close-add-staff" class="btn-secondary">Tutup</button>
+      </div>
+      <form id="add-staff-form" class="form-grid">
+        <label>
+          Nama Staff Baru
+          <input id="new-staff-name" type="text" placeholder="Masukkan nama staff" required>
+        </label>
+        <label>
+          Role
+          <select id="new-staff-role" class="js-custom-select" required>
+            <option value="Kasir">Kasir</option>
+            <option value="Kapten">Kapten</option>
+            <option value="CS">CS</option>
+          </select>
+        </label>
+        <label>
+          Shift Awal
+          <select id="new-staff-shift" class="js-custom-select" required>
+            <option value="Pagi">Pagi</option>
+            <option value="Siang">Siang</option>
+            <option value="Malam">Malam</option>
+            <option value="Libur">Libur</option>
+          </select>
+        </label>
+        <div class="full-width time-grid">
+          <label>
+            Start Time
+            <input id="new-staff-start-time" type="time" required>
+          </label>
+          <label>
+            End Time
+            <input id="new-staff-end-time" type="time" required>
+          </label>
+        </div>
+        <div class="form-actions full-width">
+          <button type="submit" class="btn-primary">Tambah Staff</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="offday-modal" class="modal-overlay" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="offday-title">
+      <div class="panel-head modal-head">
+        <div>
+          <p class="section-label">OFF-DAY</p>
+          <h2 id="offday-title">Input OFF-DAY Staff</h2>
+        </div>
+        <button type="button" id="close-offday" class="btn-secondary">Tutup</button>
+      </div>
+      <form id="offday-form" class="form-grid">
+        <label class="full-width">
+          Nama Staff
+          <select id="offday-staff" class="js-custom-select" required></select>
+        </label>
+        <label class="full-width">
+          Tanggal OFF-DAY
+          <input id="offday-date" type="date" required>
+        </label>
+        <p id="offday-feedback" class="muted form-feedback full-width"></p>
+        <div class="form-actions full-width">
+          <button type="submit" class="btn-primary">Simpan OFF-DAY</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="staff-setting-modal" class="modal-overlay" aria-hidden="true">
+    <div class="modal-card staff-setting-modal-card" role="dialog" aria-modal="true" aria-labelledby="staff-setting-title">
+      <div class="panel-head modal-head">
+        <div>
+          <p class="section-label">Setting Staff</p>
+          <h2 id="staff-setting-title">Atur Nama Staff dan Role</h2>
+          <p class="muted">Ubah nama, ganti role, atau hapus staff. Perubahan akan tetap tersimpan setelah refresh.</p>
+        </div>
+        <button type="button" id="close-staff-setting" class="btn-secondary">Tutup</button>
+      </div>
+      <form id="staff-setting-form" class="staff-setting-form">
+        <div class="staff-setting-list" id="staff-setting-list"></div>
+        <p id="staff-setting-feedback" class="muted form-feedback"></p>
+        <div class="form-actions">
+          <button type="submit" class="btn-primary">Simpan Setting</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="jobdesk-reset-modal" class="modal-overlay" aria-hidden="true">
+    <div class="modal-card jobdesk-reset-modal-card" role="dialog" aria-modal="true" aria-labelledby="jobdesk-reset-title">
+      <div class="panel-head modal-head">
+        <div>
+          <p class="section-label">Reset Jobdesk</p>
+          <h2 id="jobdesk-reset-title">Pilih Reset Jobdesk Kasir</h2>
+          <p class="muted">Pilih shift yang ingin dikosongkan dari tabel Jobdesk Kasir.</p>
+        </div>
+        <button type="button" id="close-jobdesk-reset" class="btn-secondary">Tutup</button>
+      </div>
+      <div class="jobdesk-reset-actions">
+        <button type="button" class="btn-secondary jobdesk-reset-option" data-jobdesk-reset-target="Pagi">Reset Shift Pagi</button>
+        <button type="button" class="btn-secondary jobdesk-reset-option" data-jobdesk-reset-target="Malam">Reset Shift Malam</button>
+        <button type="button" class="btn-primary jobdesk-reset-option" data-jobdesk-reset-target="Keduanya">Reset Kedua-Nya</button>
+      </div>
+      <p id="jobdesk-reset-feedback" class="muted form-feedback"></p>
+    </div>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+  <script src="js/firebase-config.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

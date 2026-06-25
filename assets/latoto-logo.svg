@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 890 184" role="img" aria-labelledby="title desc">
+  <title id="title">LATOTO Logo</title>
+  <desc id="desc">Logo LATOTO dengan huruf LA emas, pemisah putih, LATOTO emas dan silver dengan mahkota.</desc>
+  <defs>
+    <linearGradient id="goldFill" x1="0%" x2="0%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#fff9d9"/>
+      <stop offset="18%" stop-color="#ffe27a"/>
+      <stop offset="42%" stop-color="#f6bf1d"/>
+      <stop offset="68%" stop-color="#c88705"/>
+      <stop offset="100%" stop-color="#6c3d00"/>
+    </linearGradient>
+    <linearGradient id="goldStroke" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#fff1a8"/>
+      <stop offset="40%" stop-color="#f2c31f"/>
+      <stop offset="100%" stop-color="#7a4700"/>
+    </linearGradient>
+    <linearGradient id="silverFill" x1="0%" x2="0%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="18%" stop-color="#f2f2f2"/>
+      <stop offset="44%" stop-color="#d0d3d9"/>
+      <stop offset="72%" stop-color="#9b9fa8"/>
+      <stop offset="100%" stop-color="#5e6168"/>
+    </linearGradient>
+    <linearGradient id="silverStroke" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#858992"/>
+    </linearGradient>
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000000" flood-opacity="0.35"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#ffcd45" flood-opacity="0.2"/>
+    </filter>
+    <filter id="softGlowSilver" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000000" flood-opacity="0.3"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="2" flood-color="#ffffff" flood-opacity="0.12"/>
+    </filter>
+    <style>
+      .gold {
+        fill: url(#goldFill);
+        stroke: url(#goldStroke);
+        stroke-width: 3.2;
+        paint-order: stroke fill;
+        font-family: Georgia, "Times New Roman", serif;
+        font-weight: 700;
+      }
+      .silver {
+        fill: url(#silverFill);
+        stroke: url(#silverStroke);
+        stroke-width: 2.8;
+        paint-order: stroke fill;
+        font-family: Georgia, "Times New Roman", serif;
+        font-weight: 700;
+      }
+      .divider {
+        fill: #ffffff;
+        opacity: 0.95;
+      }
+      .crown-base {
+        fill: url(#goldFill);
+        stroke: url(#goldStroke);
+        stroke-width: 2.2;
+        paint-order: stroke fill;
+      }
+      .crown-dot {
+        fill: #ffd95e;
+        stroke: #b77400;
+        stroke-width: 1.1;
+      }
+    </style>
+  </defs>
+
+  <g filter="url(#softGlow)">
+    <text x="6" y="140" class="gold" font-size="145">LA</text>
+  </g>
+
+  <rect x="194" y="22" width="3.6" height="126" rx="2" class="divider"/>
+
+  <g filter="url(#softGlow)">
+    <text x="266" y="145" class="gold" font-size="126">LA</text>
+  </g>
+
+  <g filter="url(#softGlowSilver)">
+    <text x="445" y="145" class="silver" font-size="126">TO</text>
+  </g>
+
+  <g transform="translate(586 10)">
+    <path class="crown-base" d="M0 36 L15 17 L29 36 L43 11 L58 36 L72 17 L86 36 L80 61 H6 Z"/>
+    <circle class="crown-dot" cx="15" cy="16" r="5.5"/>
+    <circle class="crown-dot" cx="43" cy="9" r="6.3"/>
+    <circle class="crown-dot" cx="72" cy="16" r="5.5"/>
+  </g>
+
+  <g filter="url(#softGlowSilver)">
+    <text x="585" y="145" class="silver" font-size="126">TO</text>
+  </g>
+</svg>
